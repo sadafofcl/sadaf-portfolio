@@ -1,6 +1,6 @@
 import Image from './Image.tsx';
 
-export default function About() {
+export default function About({name,role, about}: {name: string, role: string, about : string}) {
   return (
     <section
       id="about"
@@ -8,7 +8,6 @@ export default function About() {
     >
       <div className="mx-auto max-w-7xl flex flex-col lg:flex-row items-center justify-between py-6 lg:py-12 gap-6 lg:gap-12">
 
-        {/* Text */}
         <div className="text-center lg:text-left max-w-xl order-1 lg:order-1">
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-gray-900 dark:text-gray-100">
             A bit <span className="text-pink-900 dark:text-pink-400">about me</span>
@@ -17,16 +16,13 @@ export default function About() {
           <p className="mt-4 sm:mt-6 text-lg sm:text-xl italic text-gray-600 dark:text-gray-400">
             Hi, I{"'"}m{" "}
             <span className="text-gray-900 dark:text-gray-100 font-bold">
-              Sadaf
+              {name}
             </span>
             , a{" "}
             <span className="text-gray-900 dark:text-gray-100 font-bold">
-              software developer intern
+              {role}
             </span>{" "}
-            passionate about building efficient, scalable, and maintainable
-            applications. I enjoy tackling complex problems, learning new
-            technologies, and turning ideas into functional, high-quality
-            solutions.
+            {about}
           </p>
         </div>
 

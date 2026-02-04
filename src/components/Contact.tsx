@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Contact() {
+export default function Contact({endpoint}: {endpoint: string}) { ///
   const [status, setStatus] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -14,7 +14,7 @@ export default function Contact() {
     };
 
     try {
-      const res = await fetch("https://formspree.io/f/xreldopa", {
+      const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -45,7 +45,7 @@ export default function Contact() {
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6 text-left">
-          {/* Name */}
+
           <div>
             <label className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
               Name
@@ -65,7 +65,7 @@ export default function Contact() {
             />
           </div>
 
-          {/* Email */}
+
           <div>
             <label className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
               Email
@@ -85,7 +85,7 @@ export default function Contact() {
             />
           </div>
 
-          {/* Message */}
+
           <div>
             <label className="block text-sm mb-2 text-slate-700 dark:text-slate-300">
               Message
@@ -105,7 +105,7 @@ export default function Contact() {
             />
           </div>
 
-          {/* Button */}
+
           <button
             type="submit"
             className="w-full sm:w-auto flex justify-center items-center gap-2
@@ -119,7 +119,7 @@ export default function Contact() {
             Send Message <span>→</span>
           </button>
 
-          {/* Status */}
+        
           {status && (
             <p className="mt-2 text-sm text-pink-900 dark:text-pink-400 text-center sm:text-left">
               {status}

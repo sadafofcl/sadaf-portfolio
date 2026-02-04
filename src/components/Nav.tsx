@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import Logo from "./Logo";
 
-export default function Nav() {
+export default function Nav({navItems}: {navItems: {name: string; href: string}[]}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">(
     (localStorage.getItem("theme") as "light" | "dark") || "light"
@@ -10,13 +10,6 @@ export default function Nav() {
 
   const [activeSection, setActiveSection] = useState("hero");
 
-  const navItems = [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-  ];
 
   useEffect(() => {
     const root = document.documentElement;
@@ -66,7 +59,7 @@ export default function Nav() {
                       ? "text-pink-900 dark:text-pink-400"
                       : "text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"
                   }
-                  after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+                  after:absolute after:left-0 after:-bottom-1 after:h-0.5
                   after:bg-pink-900 dark:after:bg-pink-400
                   after:transition-all after:duration-300
                   ${isActive ? "after:w-full" : "after:w-0 hover:after:w-full"}

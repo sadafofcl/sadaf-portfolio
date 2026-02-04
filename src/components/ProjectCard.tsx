@@ -31,7 +31,7 @@ export default function ProjectCard({
         transition-shadow duration-300
       `}
     >
-      {/* Image */}
+
       <div className="w-full md:w-1/2 flex justify-center">
         <img
           src={image}
@@ -50,7 +50,7 @@ export default function ProjectCard({
         />
       </div>
 
-      {/* Content */}
+
       <div className="w-full md:w-1/2 max-w-xl text-center md:text-left">
         <p className="uppercase tracking-widest text-sm mb-2 text-slate-500 dark:text-slate-400">
           {category}

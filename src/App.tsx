@@ -6,18 +6,19 @@ import Hero from './components/Hero.tsx'
 import Nav from './components/Nav.tsx'
 import Projects from './components/Projects.tsx'
 import Skills from './components/Skills.tsx'
-import { skills, projects } from './constants.ts' 
+import { name, role, skills, projects, about, endpoint, footerBrand, githubURL, linkedinURL, heroImageSrc, company, position, navItems,  } from './constants.ts' 
+
 
 function App() {
   return (
     <div className="bg-gray dark:bg-slate-950 transition-colors">
-      <Nav />
-      <Hero name="Sadaf" position="Trainee" company="ChicMic Studios" />
-      <About />
+      <Nav navItems={navItems}/>
+      <Hero name={name} position={position} company={company} heroImageSrc={heroImageSrc}/>
+      <About name={name} role={role} about={about} />
       <Skills skills={skills}/>
       <Projects projects={projects}/>
-      <Contact />
-      <Footer />
+      <Contact endpoint={endpoint}/>
+      <Footer footerBrand={footerBrand} linkedinURL={linkedinURL} githubURL={githubURL} />
     </div>
   )
 }

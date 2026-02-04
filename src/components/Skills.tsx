@@ -14,7 +14,6 @@ export default function SkillsSection({
     <section id="skills" className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-7xl">
 
-        {/* Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug text-center lg:text-left text-slate-900 dark:text-slate-100">
           My Skills
         </h1>
@@ -23,7 +22,6 @@ export default function SkillsSection({
           Here are some of the technologies and tools I have experience with...
         </p>
 
-        {/* Cards */}
         <div className="grid gap-6 sm:gap-8 md:gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map(({ title, icon: Icon, items, gradient }) => (
             <div
@@ -37,13 +35,11 @@ export default function SkillsSection({
                 transition-all duration-300 hover:-translate-y-1
               `}
             >
-              {/* Hover overlay */}
               <div className="pointer-events-none absolute inset-0 opacity-0
                 group-hover:opacity-100 transition
                 bg-linear-to-br from-white/10 to-transparent
                 dark:from-white/5" />
 
-              {/* Header */}
               <div className="flex items-center gap-4 mb-4 sm:mb-6 relative z-10">
                 <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-2xl
                   bg-white/80 dark:bg-white/10
@@ -56,7 +52,6 @@ export default function SkillsSection({
                 </h3>
               </div>
 
-              {/* Skills */}
               <div className="flex flex-wrap gap-2 sm:gap-3 relative z-10">
                 {items.map((skill) => (
                   <span

@@ -1,12 +1,11 @@
-export default function Footer4() {
+export default function Footer4({footerBrand, linkedinURL, githubURL}: {footerBrand: string, linkedinURL: string, githubURL  : string}) {
   return (
     <footer className="w-full bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
           
-          {/* Copyright */}
           <p className="text-sm text-center sm:text-left text-slate-500 dark:text-slate-400">
-            © 2026 Sadaf&apos;s Portfolio. All rights reserved.
+            © 2026 {footerBrand}. All rights reserved.
           </p>
 
           {/* Social icons */}
@@ -14,7 +13,7 @@ export default function Footer4() {
             
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com/in/sadafofcl/"
+              href={linkedinURL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -33,7 +32,7 @@ export default function Footer4() {
 
             {/* GitHub */}
             <a
-              href="https://github.com/sadafofcl"
+              href={githubURL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"

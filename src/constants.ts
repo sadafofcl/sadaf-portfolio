@@ -1,5 +1,24 @@
 import { Code2, Server, Wrench } from "lucide-react";
 
+export const name = "Sadaf";
+export const role = "software developer intern";
+export const about ="passionate about building efficient, scalable, and maintainable applications. I enjoy tackling complex problems, learning new technologies, and turning ideas into functional, high-quality solutions.";
+export const endpoint = "https://formspree.io/f/xreldopa";
+export const footerBrand = "Sadaf's Portfolio";
+export const linkedinURL = "https://www.linkedin.com/in/sadafofcl/";
+export const githubURL = "https://github.com/sadafofcl";
+export const heroImageSrc = "/heroImg.png";
+export const position = "Trainee";
+export const company = "ChicMic Studios"; 
+
+export const navItems = [
+    { name: "Home", href: "#hero" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
+  ];
+
 export const skills = [
   {
     title: "Frontend",

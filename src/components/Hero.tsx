@@ -4,10 +4,12 @@ export default function Hero({
   name,
   position,
   company,
+  heroImageSrc
 }: {
   name: string;
   position: string;
   company: string;
+  heroImageSrc: string;
 }) {
   return (
     <section
@@ -17,10 +19,9 @@ export default function Hero({
 
       <div className="mx-auto max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-8 lg:gap-12">
 
-        {/* Image */}
         <div className="flex justify-center lg:justify-start w-full lg:w-auto">
           <Image
-            src="./heroImg.png"
+            src={heroImageSrc}
             tailwind="object-contain h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72"
           />
         </div>
