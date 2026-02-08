@@ -42,14 +42,14 @@ export const skills = [
 
 export const projects = [
   {
-    title: "MFC SDI Graphics Editor with File Operations using GDI",
-    description:
-      "An MFC-based SDI application with object serialization for file operations such as Create, Open, Save, and Save As, implemented 2D vector graphics rendering using Win32 GDI within the View's OnDraw() method, and integrated modal CDialog-based input interfaces using MFC command routing and message maps.",
-    category: "Software Development",
-    image: "/projImg1.png",
-    reverse: true,
-    cta: "View work",
-    link: "https://github.com/sadafofcl?tab=repositories",
+      title: "Password Generator",
+      description:
+        "A secure and customizable password generator built with React and TypeScript. Users can adjust password length, include numbers and special characters, and instantly copy generated passwords to the clipboard. Perfect for creating strong, unique passwords for all accounts.",
+      category: "Frontend Development",
+      image: "/projImg2.png", 
+      reverse: true,
+      cta: "Try it now",
+      link: "https://password-generator-react-typescript.vercel.app", 
   },
   {
     title: "Portfolio Website",
@@ -60,12 +60,22 @@ export const projects = [
     reverse: false,
   },
   {
+    title: "MFC SDI Graphics Editor with File Operations using GDI",
+    description:
+      "An MFC-based SDI application with object serialization for file operations such as Create, Open, Save, and Save As, implemented 2D vector graphics rendering using Win32 GDI within the View's OnDraw() method, and integrated modal CDialog-based input interfaces using MFC command routing and message maps.",
+    category: "Software Development",
+    image: "/projImg1.png",
+    reverse: true,
+    cta: "View work",
+    link: "https://github.com/sadafofcl?tab=repositories",
+  },
+  {
     title: "Image Viewer Dialog App",
     description:
       "A dialog-based MFC application in C++ that dynamically renders BMP images using CStatic and SetBitmap(), supports runtime image selection via CFileDialog without restarting the app, and handles image switching using Windows GDI and message mapping.",
     category: "Software Development",
     image: "/projImg4.png",
-    reverse: true,
+    reverse: false,
     cta: "View work",
     link: "https://github.com/sadafofcl?tab=repositories",
   },
