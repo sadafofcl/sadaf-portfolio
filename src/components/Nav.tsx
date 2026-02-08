@@ -1,21 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import Logo from "./Logo";
+import {ThemeContext}  from "./context/ThemeContext";
 
 export default function Nav({navItems}: {navItems: {name: string; href: string}[]}) {
+  const {toggleTheme, currTheme}=useContext(ThemeContext)
   const [menuOpen, setMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">(
-    (localStorage.getItem("theme") as "light" | "dark") || "light"
-  );
 
   const [activeSection, setActiveSection] = useState("hero");
-
-
-  useEffect(() => {
-    const root = document.documentElement;
-    root.classList.toggle("dark", theme === "dark");
-    localStorage.setItem("theme", theme);
-  }, [theme]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +36,6 @@ export default function Nav({navItems}: {navItems: {name: string; href: string}[
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Logo />
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => {
             const isActive = activeSection === item.href.replace("#", "");
@@ -71,20 +62,19 @@ export default function Nav({navItems}: {navItems: {name: string; href: string}[
           })}
 
           <button
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            onClick={()=>toggleTheme()}
             className="p-2 rounded-md border border-gray-300 dark:border-gray-700"
           >
-            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            {currTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
         </div>
 
-        {/* Mobile Controls */}
         <div className="md:hidden flex items-center gap-2">
           <button
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            onClick={() => toggleTheme()}
             className="p-2 rounded-md border border-gray-300 dark:border-gray-700"
           >
-            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            {currTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
 
           <button onClick={() => setMenuOpen(!menuOpen)}>
@@ -93,7 +83,6 @@ export default function Nav({navItems}: {navItems: {name: string; href: string}[
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-white dark:bg-black border-t px-6 py-4 space-y-4">
           {navItems.map((item) => {
