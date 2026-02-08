@@ -29,13 +29,13 @@ export const skills = [
   {
     title: "Programming Languages",
     icon: Server,
-    items: ["C++", "Java", "JavaScript", "TypeScript", "Python"],
+    items: [ "Java", "JavaScript", "TypeScript", "C++", "MFC", "Python"],
     gradient: "from-blue-500/10 to-cyan-500/10",
   },
   {
     title: "Tools",
     icon: Wrench,
-    items: ["Git", "GitHub", "Vite", "VS Code", "Visual Studio "],
+    items: ["Git", "GitHub", "Vite", "VS Code", "Visual Studio", "Vercel"],
     gradient: "from-emerald-500/10 to-teal-500/10",
   },
 ];
